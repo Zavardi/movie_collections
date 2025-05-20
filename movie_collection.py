@@ -105,4 +105,4 @@ if __name__ == "__main__":
         print(movie)
 
     A = input()
-    print(f'Название фильма {A}')
+    print(f'Название фильмап {A}')
