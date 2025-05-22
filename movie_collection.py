@@ -84,12 +84,17 @@ if __name__ == "__main__":
     collection.add_movie(Movie("Крестный отец", 1972, "Криминал", "Фрэнсис Форд Коппола"))
     collection.add_movie(Movie("Темный рыцарь", 2008, "Боевик", "Кристофер Нолан"))
     collection.add_movie(Movie("Побег из Шоушенка", 1994, "Драма", "Фрэнк Дарабонт"))
+    collection.add_movie(Movie("Властелин колец", 2003, "Фэнтези", "Фрэнсис Форд Коппола"))
     
     # Создаем коллекцию "Лучшие"
     collection.create_collection("Лучшие")
     collection.add_to_collection("Лучшие", "Крестный отец")
     collection.add_to_collection("Лучшие", "Побег из Шоушенка")
     
+    collection.create_collection("Фэнтези")
+    collection.add_to_collection("Фэнтези", "Властелин колец")
+    
+
     # Поиск фильмов
     print("Фильмы 1994 года:")
     for movie in collection.search_by_year(1994):
@@ -98,11 +103,12 @@ if __name__ == "__main__":
     print("\nФильмы в коллекции 'Лучшие':")
     for movie in collection.get_collection("Лучшие") or []:
         print(movie)
-    
+
+    print("\nФильмы в коллекции 'Фэнтези':")
+    for movie in collection.get_collection("Фэнтези") or []:
+        print(movie)
+
     # Итерация по всем фильмам
     print("\nВсе фильмы в коллекции:")
     for movie in collection:
         print(movie)
-
-    A = input()
-    print(f'Название фильмап {A}')
